@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Hero from './Hero';
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Hero />
+    </div>
   );
 }
 
