@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center h-[10vh] w-full px-6 ">
+    <div className="flex justify-between items-center h-[10vh] w-full px-6 bg-white shadow-md">
       <NavLink to="/">
         <p className="text-pink-800 text-lg font-semibold">Ganjala Clinic</p>
       </NavLink>

@@ -7,6 +7,7 @@ import About from "./Pages/About";
 import Specialists from "./Pages/Specialists";
 import Contact from "./Pages/Contact";
 import Appointment from "./Pages/Appointment";
+import Footer from './Component/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<Appointment />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
