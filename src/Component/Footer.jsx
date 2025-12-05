@@ -83,7 +83,7 @@ const Footer = () => {
       <hr className="my-10 border-gray-700 w-[95vw] mx-auto" />
 
       <div className="mt-[-12px] px-6">
-        <p className="text-sm text-gray-400">© 2023 Ganjala Clinic. All rights reserved.</p>
+        <p className="text-sm text-gray-400">© 2025 Ganjala Clinic. All rights reserved.</p>
       </div>
     </div>
   );

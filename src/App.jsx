@@ -11,7 +11,7 @@ import Footer from './Component/Footer';
 
 function App() {
   return (
-    <>
+    <div className='bg-pink-100'>
       {/* <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">// </div> */}
       <BrowserRouter>
         <Navbar />
@@ -25,7 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 export default App;
