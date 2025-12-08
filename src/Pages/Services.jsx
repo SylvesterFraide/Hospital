@@ -2,13 +2,14 @@ import React from "react";
 import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
 import { Link } from "react-router-dom";
 
+
 const Services = () => {
   return (
-    <div className=" w-[90vw] mx-auto">
-      <h1 className="text-2xl font-bold py-0.5 text-center pt-4">
+    <div className=" w-[90vw] mx-auto py-6">
+      <h1 className="text-2xl font-bold py-0.5 text-center">
         Our <span className="text-pink-600">Premium Services</span>
       </h1>
-      <p className="text-center pb-10 w-[60vw] mx-auto">
+      <p className="text-center pb-10 w-[60vw] mx-auto py-2">
         At Ganjala Clinic, we offer a wide range of medical services to cater to
         your health needs. Our team of experienced professionals is dedicated to
         providing the highest quality care.
@@ -74,6 +75,13 @@ const Services = () => {
             </p>
           </Link>
         </div>
+      </div>
+
+      <div className="text-center py-10">
+        <h2 className="text-2xl font-bold pb-4">Ready to transform your look?</h2>
+        <Link >
+          <button className='bg-pink-600 text-white py-2 px-6 rounded-full hover:bg-pink-700'> Book Your Consultation Now </button>
+        </Link>
       </div>
     </div>
   );

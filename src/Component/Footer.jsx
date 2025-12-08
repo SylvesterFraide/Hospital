@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="">
           <h4 className="text-md sm:text-lg font-semibold">Quick Links</h4>
-          <hr className="w-[3rem] text-bold text-pink-500" />
+          <span className="h-1 w-2/4 bg-pink-600 rounded-md block"></span>
           <ul className="flex flex-col gap-2 text-sm sm:text-md py-4">
             <li className="hover:underline hover:text-pink-500">
               <a href="/">Home</a>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         <div className="">
           <h4 className="text-md sm:text-lg font-semibold">Contact Us</h4>
-          <hr className="w-[3rem] text-bold text-pink-500 mb-4" />
+          <span className="h-1 w-1/6 bg-pink-600 rounded-md block"></span>
           <div className="text-sm sm:text-md">
             <div className="flex items-center gap-4 py-2">
               <PlaceIcon className="text-pink-800" />
@@ -83,7 +83,9 @@ const Footer = () => {
       <hr className="my-10 border-gray-700 w-[95vw] mx-auto" />
 
       <div className="mt-[-12px] px-6">
-        <p className="text-sm text-gray-400">© 2025 Ganjala Clinic. All rights reserved.</p>
+        <p className="text-sm text-gray-400">
+          © 2025 Ganjala Clinic. All rights reserved.
+        </p>
       </div>
     </div>
   );

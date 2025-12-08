@@ -4,7 +4,7 @@ import HeroImg from '../assets/Hero/HeroImg.jpeg'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col md:flex-row items-center gap-5 md:gap-50 mt-10 px-2 sm:px-15'>
+    <div className='flex flex-col md:flex-row items-center gap-5 md:gap-50 mt-10 px-2 sm:px-15 h-[90vh]'>
        <div className="">
         <h1 className='text-4xl font-bold'>Enhance Your <br /> Natural <span className='text-pink-800'>Beauty</span> </h1>
         <p className='text-gray-400 py-4 text-md sm:text-lg w-full sm:w-[35rem]' >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit neque laudantium eius maiores, hic quia inventore provident minima atque, quod illo numquam? Assumenda voluptas temporibus nemo amet dolores iusto fuga!</p>
