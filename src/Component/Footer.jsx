@@ -11,17 +11,17 @@ import Newsletter from "./Newslater";
 
 const Footer = () => {
   return (
-    <div className="h-[90vh] bg-gray-800">
-      <div className="flex flex-col sm:flex-row justify-between px-8 py-8 text-white">
-        <div className="w-[35rem]">
+    <div className="md:h-[90vh] bg-gray-800 ">
+      <div className="flex flex-col md:flex-row justify-between px-4 md:px-8 py-4 md:py-8 text-white">
+        <div className="w-full md:w-[35rem]">
           <h3 className="text-md sm:text-lg font-semibold">Ganjala Clinic</h3>
-          <p className="py-4 text-sm sm:text-md">
+          <p className="md:py-2 md:py-4 text-sm sm:text-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum
             eveniet soluta officia, delectus sunt ullam, obcaecati eaque cumque
             possimus nesciunt? Maiores corrupti, vero modi consequatur quaerat
             voluptas? Suscipit, quis?
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 py-2 md:py-0">
             <FacebookIcon className="text-blue-500 hover:text-blue-700" />
             <InstagramIcon className="text-pink-500 hover:text-pink-700" />
             <XIcon className="text-red-500 hover:text-red-700" />
@@ -30,8 +30,8 @@ const Footer = () => {
         </div>
         <div className="">
           <h4 className="text-md sm:text-lg font-semibold">Quick Links</h4>
-          <span className="h-1 w-2/4 bg-pink-600 rounded-md block"></span>
-          <ul className="flex flex-col gap-2 text-sm sm:text-md py-4">
+          <span className="h-1 w-[4rem] md:w-2/4 bg-pink-600 rounded-md block"></span>
+          <ul className="flex flex-col md:gap-2 text-sm sm:text-md py-2 md:py-4">
             <li className="hover:underline hover:text-pink-500">
               <a href="/">Home</a>
             </li>
@@ -54,21 +54,21 @@ const Footer = () => {
         </div>
         <div className="">
           <h4 className="text-md sm:text-lg font-semibold">Contact Us</h4>
-          <span className="h-1 w-1/6 bg-pink-600 rounded-md block"></span>
-          <div className="text-sm sm:text-md">
-            <div className="flex items-center gap-4 py-2">
+          <span className="h-1 w-[4rem] md:w-1/6 bg-pink-600 rounded-md block"></span>
+          <div className="text-sm sm:text-md py-2">
+            <div className="flex items-center gap-2 md:gap-4 md:py-2 hover:text-pink-300">
               <PlaceIcon className="text-pink-800" />
               <p>123 Main St, Anytown, USA</p>
             </div>
-            <div className="flex items-center gap-4 py-2">
+            <div className="flex items-center gap-2 md:gap-4 md:py-2 hover:text-pink-300">
               <CallIcon className="text-green-800" />
               <p>(123) 456-7890</p>
             </div>
-            <div className="flex items-center gap-4 py-2">
+            <div className="flex items-center gap-2 md:gap-4 md:py-2 hover:text-pink-300">
               <EmailIcon className="text-blue-800" />
               <p>info@ganjalaclinic.com</p>
             </div>
-            <div className="flex items-center gap-4 py-2">
+            <div className="flex items-center gap-2 md:gap-4 md:py-2 hover:text-pink-300">
               <AccessTimeIcon className="text-yellow-800" />
               <p>Mon-Fri: 9:00AM-5:00PM, Sat-Sun: 10:00AM-4:00PM</p>
             </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="py-8">
+      <div className="py-4 md:py-8">
         <Newsletter />
       </div>
 

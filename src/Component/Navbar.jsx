@@ -5,7 +5,7 @@ import Button from "./Button";
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("Home");
   return (
-    <div className="flex justify-between items-center h-[10vh] w-full px-6 bg-white shadow-md sticky top-0 z-50">
+    <div className="flex justify-between items-center h-[10vh] w-full px-3 sm:px-6 bg-white shadow-md sticky top-0 z-50">
       <NavLink to="/" onClick={() => setActiveMenu("Home")}>
         <p className="text-pink-800 text-lg font-semibold">Ganjala Clinic</p>
       </NavLink>
