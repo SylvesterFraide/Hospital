@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
-    <div className=" w-[90vw] mx-auto py-6">
+    <div className=" w-[80vw] mx-auto py-6">
       <h1 className="text-2xl font-bold py-0.5 text-center">
         Our <span className="text-pink-600">Premium Services</span>
       </h1>
       <p className="text-center pb-10 w-[60vw] mx-auto py-2 text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente aliquid omnis fuga cumque natus nostrum eos ex minus enim. Totam dolor repellat hic facere optio sunt, tempora omnis amet.
+       fuga cumque natus nostrum eos ex minus enim. Totam dolor repellat hic facere optio sunt, tempora omnis amet.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4">
         <div className="bg-white rounded shadow h-[21rem] w-full">
           <h1 className="font-bold text-md pl-4 text-pink-600 py-6">icon1</h1>
           <h2 className="font-bold pl-4 text-lg italic mb-6">

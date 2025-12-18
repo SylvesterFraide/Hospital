@@ -9,7 +9,7 @@ const Navbar = () => {
       <NavLink to="/" onClick={() => setActiveMenu("Home")}>
         <p className="text-pink-800 text-lg font-semibold">Ganjala Clinic</p>
       </NavLink>
-      <ul className="items-center gap-6 hidden md:flex text-gray-400 font-semibold">
+      <ul className="items-center gap-6 hidden lg:flex text-gray-400 font-semibold">
         <li>
           <NavLink to="/" onClick={() => setActiveMenu("Home")}>
             <p>Home</p>
