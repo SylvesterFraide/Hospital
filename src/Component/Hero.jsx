@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
         </div> 
         <div className="">
-          <img src={HeroImg} alt="Hero" className="w-80 h-80 rounded-[90%]" />
+          <img src={HeroImg} alt="Hero" className="w-80 h-80 rounded-[90%] hover:scale-105 transition-transform duration-300" />
         </div>
     </div>
   )
