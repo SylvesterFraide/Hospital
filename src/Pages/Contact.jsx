@@ -1,10 +1,10 @@
 import React from "react";
 import HeroImg from "../assets/Hero/HeroImg.jpeg";
-import mensHydrafacial from  '../assets/Images/mens-hydrafacial.webp';
+import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
 
 const Contact = () => {
   return (
-    <div className="w-[90vw] mx-auto">
+    <div id="contact" className="w-[90vw] mx-auto">
       <h1 className="text-3xl font-bold text-center mt-4">
         Contact <span className="text-pink-600">Our Clinic</span>
       </h1>
@@ -48,7 +48,11 @@ const Contact = () => {
                 <p className="text-gray-600">Sat-Sun: 10:00AM-4:00PM</p>
               </div>
             </div>
-            <img src={mensHydrafacial} alt="" className="w-85 h-50 rounded-lg pb-2" />
+            <img
+              src={mensHydrafacial}
+              alt=""
+              className="w-85 h-50 rounded-lg pb-2"
+            />
           </section>
         </div>
 
@@ -67,6 +71,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your name"
+                    id="name"
                     name="name"
                     required
                     className="border outline-none rounded-md px-4 py-1"
@@ -77,6 +82,7 @@ const Contact = () => {
                   <input
                     type="number"
                     name="number"
+                    id="number"
                     placeholder="+254 XX XXX XXX"
                     required
                     className="border outline-none rounded-md mb-4 px-4 py-1"
@@ -90,6 +96,7 @@ const Contact = () => {
                 type="email"
                 placeholder="your@gmail.com"
                 name="email"
+                id="email"
                 required
                 className="border outline-none rounded-md w-full mb-6 px-4 py-1"
               />
@@ -98,28 +105,53 @@ const Contact = () => {
               </label>
               <textarea
                 name="message"
+                id="message"
                 required
                 className="border outline-none rounded-md w-full px-4 mb-6 px-4"
               ></textarea>
-              <label htmlFor="" className="block mb-1">
+              <label htmlFor="services" className="block mb-1">
                 Services Interested In:
               </label>
               <select className="border outline-none rounded-md w-full">
                 <option value="botox">Select a service</option>
-
-                <option value="laser" id="laser" className="text-gray-600">
+                <option
+                  value="laser"
+                  id="laser"
+                  name="laser"
+                  className="text-gray-600"
+                >
                   Laser Treatments
                 </option>
-                <option value="botox" id="botox" className="text-gray-600">
+                <option
+                  value="botox"
+                  id="botox"
+                  name="botox"
+                  className="text-gray-600"
+                >
                   Botox & Filters
                 </option>
-                <option value="botox" id="body" className="text-gray-600">
+                <option
+                  value="body"
+                  id="body"
+                  name="body"
+                  className="text-gray-600"
+                >
                   Body Contouring
                 </option>
-                <option value="botox" id="tummy" className="text-gray-600">
+                <option
+                  value="tummy"
+                  id="tummy"
+                  name="tummy"
+                  className="text-gray-600"
+                >
                   Tummy Tuck
                 </option>
-                <option value="botox" id="other" className="text-gray-600">
+                <option
+                  value="botox"
+                  id="other"
+                  name="other"
+                  className="text-gray-600"
+                >
                   Other
                 </option>
               </select>

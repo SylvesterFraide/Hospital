@@ -5,7 +5,7 @@ import ServiceImg from '../assets/Images/ServiceImg.jpg';
 
 const Services = () => {
   return (
-    <div className=" w-[80vw] mx-auto py-6">
+    <div id="services" className=" w-[80vw] mx-auto py-6">
       <h1 className="text-2xl font-bold py-0.5 text-center">
         Our <span className="text-pink-600">Premium Services</span>
       </h1>
