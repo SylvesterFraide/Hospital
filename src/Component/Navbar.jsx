@@ -143,7 +143,6 @@ const Navbar = () => {
       >
         <li>
           <Link
-          
             spy={true}
             smooth={true}
             offset={-50}

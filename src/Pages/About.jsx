@@ -2,6 +2,7 @@ import React from "react";
 import AboutImg from "../assets/Hero/HeroImg.jpeg";
 import Hyrda from "../assets/Images/Hyrda.webp";
 import Button from "../Component/Button";
+import { Link } from "react-scroll";
 
 const About = () => {
   return (
@@ -33,8 +34,15 @@ const About = () => {
           <span className="bg-white w-65 lg:w-80 py-2 rounded-lg shadow-md px-4">Three</span>
           <span className="bg-white w-65 lg:w-80 py-2 rounded-lg shadow-md px-4">Four</span>
         </div> */}
-
-          <Button text="Meet our Specialists" />
+          <Link
+            to="specialists"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <Button text="Meet our Specialists" />
+          </Link>
         </div>
       </div>
   );

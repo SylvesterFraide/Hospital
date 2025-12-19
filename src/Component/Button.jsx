@@ -4,7 +4,7 @@ const Button = ({ text }) => {
   return (
     <div>
       <button
-       className="bg-pink-800 text-white text-sm py-2 rounded-[50px] w-[10rem] cursor-pointer">
+       className="bg-pink-800 text-white text-sm py-2 rounded-[50px] w-[10rem] cursor-pointer hover:bg-pink-600">
         {text}
       </button>
     </div>
