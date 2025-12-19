@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center h-[10vh] w-full px-3 sm:px-6 bg-white shadow-md sticky top-0 z-50">
+      <div className="flex cursor-pointer justify-between items-center h-[10vh] w-full px-3 sm:px-6 bg-white shadow-md sticky top-0 z-50">
         <Link
         
           spy={true}
@@ -30,7 +30,7 @@ const Navbar = () => {
               smooth={true}
               offset={-50}
               duration={500}
-              to=""
+              to="home"
               onClick={() => setActiveMenu("Home")}
             >
               <p>Home</p>
@@ -139,7 +139,7 @@ const Navbar = () => {
       <ul 
         className={`gap-6 space-y-3 ${
           isMenuOpen ? "block" : "hidden"
-        } lg:hidden flex flex-col text-gray-700 py-4 px-12 font-semibold bg-pink-200`}
+        } lg:hidden flex flex-col cursor-pointer text-gray-700 py-4 px-12 font-semibold bg-pink-200`}
       >
         <li>
           <Link

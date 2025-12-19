@@ -4,16 +4,16 @@ import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
 
 const Contact = () => {
   return (
-    <div id="contact" className="w-[90vw] mx-auto">
+    <div id="contact" className="w-[80vw] py-4 mx-auto">
       <h1 className="text-3xl font-bold text-center mt-4">
         Contact <span className="text-pink-600">Our Clinic</span>
       </h1>
       <p className="text-center">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </p>
-      <div className="my-4 flex flex-col lg:flex-row gap-[2vw] w-[90vw] mx-auto">
-        <div className="bg-white w-full lg:w-[35vw] pt-6 hover:contrast-95">
-          <section className=" w-full lg:w-[30vw] px-11 lg:px-0 mx-0 lg:mx-auto">
+      <div className="my-4 flex flex-col lg:flex-row gap-[2vw] w-[80vw] mx-auto">
+        <div className="bg-white w-full lg:w-[30vw] pt-6 hover:contrast-95">
+          <section className=" w-full lg:w-[25vw] px-11 lg:px-0 mx-0 lg:mx-auto">
             <h3 className="font-semibold text-lg">Get In Touch</h3>
             <div className="flex gap-6 py-4">
               <p className="">Icon1</p>
@@ -56,7 +56,7 @@ const Contact = () => {
           </section>
         </div>
 
-        <div className="bg-white w-full lg:w-[53vw] py-4 hover:contrast-95">
+        <div className="bg-white w-full lg:w-[48vw] py-4 hover:contrast-95">
           <form action="" className=" w-full lg:w-[36vw] px-11 lg:px-auto pt-4">
             <fieldset>
               {" "}
