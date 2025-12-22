@@ -1,6 +1,8 @@
 import React from "react";
 import HeroImg from "../assets/Hero/HeroImg.jpeg";
 import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
+import Button from "../Component/Button";
+import ServiceImg from "../assets/Images/ServiceImg.jpg";
 
 const Contact = () => {
   return (
@@ -155,13 +157,61 @@ const Contact = () => {
                   Other
                 </option>
               </select>
-              <button
+              {/* <button
                 type="submit"
                 className="bg-pink-800 hover:bg-pink-600 text-white rounded-full px-4 py-2 my-8"
               >
                 Send Message
-              </button>
+              </button> */}
+              <div className="pt-8">
+                {" "}
+                <Button text="Send Message" />
+              </div>
             </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div
+        className="flex gap-5 h-[90vh] w-[80vw] mx-auto my-8"
+        style={{
+          backgroundImage: `url(${ServiceImg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="px-6 pb-6 content-end">
+          <header>
+            <h1 className="font-bold text-2xl underline">LOGO</h1>
+          </header>
+          <p className="py-4 text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          <section className="flex gap-4 flex-wrap font-semibold italic">
+            <p>ICON1</p>
+            <p>ICON1</p>
+            <p>ICON1</p>
+            <p>ICON1</p>
+          </section>
+        </div>
+
+        <div className="bg-white shadow-lg w-[42.5rem]">
+          <h1 className="text-2xl font-bold">
+            GET IN <span className="text-sky-600">TOUCH</span>{" "}
+          </h1>
+          <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          <form action="" className="flex flex-col">
+            <div className="flex">
+              <input type="text" placeholder="First Name" required />
+              <input type="text" placeholder="Last Name" required />
+            </div>
+            <input type="email" placeholder="Email" required />
+            <input type="number" placeholder="Phone" required />
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Describe your issue"
+            ></textarea>
           </form>
         </div>
       </div>

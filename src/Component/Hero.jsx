@@ -2,15 +2,21 @@ import React from "react";
 import Button from "./Button";
 import HeroImg from "../assets/Hero/HeroImg.jpeg";
 import { Link } from "react-scroll";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-5 lg:gap-50 mt-3 lg:h-[90vh] w-[80vw] mx-auto">
       <div className="">
-        <h1 className="text-4xl font-bold">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="text-4xl font-bold"
+        >
           Enhance Your <br /> Natural{" "}
           <span className="text-pink-800">Beauty</span>{" "}
-        </h1>
+        </motion.h1>
         <p className="text-gray-400 py-4 text-md sm:text-lg w-full sm:w-[35rem]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit neque
           laudantium eius maiores, hic quia inventore provident minima atque,
@@ -26,9 +32,13 @@ const Hero = () => {
             offset={-50}
             duration={500}
           >
-            <button className="border border-pink-800 text-pink-800 text-sm sm:text-md px-4 py-2 rounded-[50px] w-1/2 sm:w-[10rem] cursor-pointer hover:bg-pink-800 hover:text-white">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.9, y: 1 }}
+              className="border border-pink-800 text-pink-800 text-sm sm:text-md px-4 py-2 rounded-[50px] w-1/2 sm:w-[10rem] cursor-pointer"
+            >
               Explore more...
-            </button>
+            </motion.button>
           </Link>
         </div>
         <div className="flex items-center  ml-2 sm:ml-10 py-6 gap-6 sm:gap-10">
