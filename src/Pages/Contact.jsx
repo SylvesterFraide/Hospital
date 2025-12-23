@@ -54,7 +54,7 @@ const Contact = () => {
             <div className="flex gap-6 py-4">
               <p className=""><AccessTimeIcon /></p>
               <div className="">
-                <h5 className="font-semibold">Working Hours</h5>
+                <h5 className="font-semibold">Working Ours</h5>
                 <p className="text-gray-600">Mon-Fri: 9:00AM-5:00PM</p>
                 <p className="text-gray-600">Sat-Sun: 10:00AM-4:00PM</p>
               </div>
