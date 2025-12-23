@@ -4,6 +4,14 @@ import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
 import Button from "../Component/Button";
 import ServiceImg from "../assets/Images/ServiceImg.jpg";
 import { motion } from "motion/react";
+import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import EmailIcon from '@mui/icons-material/Email';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const Contact = () => {
   return (
@@ -19,7 +27,7 @@ const Contact = () => {
           <section className=" w-full md:w-[25vw] px-11 md:px-0 mx-0 md:mx-auto">
             <h3 className="font-semibold text-lg">Get In Touch</h3>
             <div className="flex gap-6 py-4">
-              <p className="">Icon1</p>
+              <p className=""><LocationOnIcon /></p>
               <div className="">
                 <h5 className="font-semibold">Our Location</h5>
                 <p className="text-gray-600">
@@ -28,7 +36,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6 pb-4">
-              <p className="">Icon2</p>
+              <p className=""><PhoneIphoneIcon /></p>
               <div className="">
                 <h5 className="font-semibold">Phone Number</h5>
                 <p className="text-gray-600">Appointments: +254 700 000 000</p>
@@ -36,7 +44,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6">
-              <p className="">Icon3</p>
+              <p className=""><EmailIcon /></p>
               <div className="">
                 <h5 className="font-semibold">Email</h5>
                 <p className="text-gray-600">clinic@gmail.com</p>
@@ -44,9 +52,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6 py-4">
-              <p className="">Icon4</p>
+              <p className=""><AccessTimeIcon /></p>
               <div className="">
-                <h5 className="font-semibold">Working Ours</h5>
+                <h5 className="font-semibold">Working Hours</h5>
                 <p className="text-gray-600">Mon-Fri: 9:00AM-5:00PM</p>
                 <p className="text-gray-600">Sat-Sun: 10:00AM-4:00PM</p>
               </div>
@@ -172,7 +180,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
+        
       <div
         className="flex gap-5 flex-col md:flex-row md:h-[90vh] w-[80vw] mx-auto "
         style={{
@@ -183,23 +191,23 @@ const Contact = () => {
       >
         <div className="px-6 pb-6 content-end">
           <header>
-            <h1 className="font-bold text-2xl underline">LOGO</h1>
+            <h1 className="font-bold text-2xl text-pink-600 italic">Ganjala Clinic</h1>
           </header>
           <p className="py-4 text-lg">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           </p>
 
-          <section className="flex gap-4 flex-wrap font-semibold italic">
-            <p>ICON1</p>
-            <p>ICON1</p>
-            <p>ICON1</p>
-            <p>ICON1</p>
+          <section className="flex gap-4 flex-wrap cursor-pointer">
+            <FacebookSharpIcon className="text-blue-600 hover:text-blue-800" />
+            <YouTubeIcon className="text-red-600 hover:text-red-800" />
+            <InstagramIcon className="text-pink-600 hover:text-pink-800" />
+            <XIcon className="text-gray-600 hover:text-gray-800" />
           </section>
         </div>
 
         <div className="px-6 bg-white shadow-lg h-full md:h-auto w-full md:w-[42.5rem]">
           <h1 className="text-2xl font-bold pt-6">
-            GET IN <span className="text-sky-600">TOUCH</span>{" "}
+            GET IN <span className="text-pink-600">TOUCH</span>{" "}
           </h1>
           <p className="py-4">
             {" "}
