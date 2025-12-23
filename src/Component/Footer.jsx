@@ -11,7 +11,7 @@ import Newsletter from "./Newslater";
 
 const Footer = () => {
   return (
-    <div className="md:h-[90vh] bg-gray-800 ">
+    <div className="md:h-[90vh] bg-gray-800  ">
       <div className="flex flex-col md:flex-row justify-between px-4 md:px-8 py-4 md:py-8 text-white">
         <div className="w-full md:w-[35rem]">
           <h3 className="text-md sm:text-lg font-semibold">Ganjala Clinic</h3>
@@ -80,10 +80,10 @@ const Footer = () => {
         <Newsletter />
       </div>
 
-      <hr className="my-10 border-gray-700 w-[95vw] mx-auto" />
+      <hr className="border-gray-700 w-[95vw] pt-4 mx-auto" />
 
-      <div className="mt-[-12px] px-6">
-        <p className="text-sm text-gray-400">
+      <div className=" px-6">
+        <p className="text-sm text-gray-400 pb-4 md:pb-0 md:pt-8">
           © 2025 Ganjala Clinic. All rights reserved.
         </p>
       </div>

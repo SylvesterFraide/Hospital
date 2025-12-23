@@ -22,7 +22,7 @@ const Navbar = () => {
         >
           <p className="text-pink-800 text-lg font-semibold">Ganjala Clinic</p>
         </Link>
-        <ul  className="items-center gap-6 hidden lg:flex text-gray-400 font-semibold ">
+        <ul  className="items-center gap-6 hidden md:flex text-gray-400 font-semibold ">
           <li>
             <Link
             
@@ -125,12 +125,12 @@ const Navbar = () => {
           offset={-50}
           duration={500}
           to="appointment"
-          className="hidden lg:block"
+          className="hidden md:block"
         >
           <Button text="Book Appointment" />
         </Link>
 
-        <div className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <CloseSharpIcon /> : <MenuSharpIcon />}
         </div>
       </div>

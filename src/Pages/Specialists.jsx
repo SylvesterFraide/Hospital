@@ -15,8 +15,8 @@ const Specialists = () => {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quis
         quam sequi,
       </p>
-      <div className="flex flex-col lg:flex-row gap-10  py-10 items-center w-[80vw] mx-auto">
-        <div className="flex flex-wrap h-120  w-80 bg-white rounded-lg shadow-lg relative">
+      <div className="flex flex-wrap gap-5 py-10 w-[80vw] mx-auto justify-center">
+        <div className="flex h-120  w-80 bg-white rounded-lg shadow-lg relative">
           <img
             src={Hyrdra}
             alt="Hydra"
@@ -45,7 +45,7 @@ const Specialists = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap h-120 w-80 bg-white rounded-lg shadow-lg relative">
+        <div className="flex h-120 w-80 bg-white rounded-lg shadow-lg relative">
           <img
             src={mensHydrafacial}
             alt="mensHydrafacial"
@@ -74,7 +74,7 @@ const Specialists = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap h-120 w-80 bg-white rounded-lg shadow-lg relative">
+        <div className="flex h-120 w-80 bg-white rounded-lg shadow-lg relative">
           <img
             src={serviceImg}
             alt="serviceImg"
