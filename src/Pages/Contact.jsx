@@ -180,7 +180,8 @@ const Contact = () => {
           </form>
         </div>
       </div>
-        
+
+      {/* alternative contact */}
       <div
         className="flex gap-5 flex-col md:flex-row md:h-[90vh] w-[80vw] mx-auto "
         style={{
