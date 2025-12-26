@@ -4,16 +4,36 @@ import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
 import Button from "../Component/Button";
 import ServiceImg from "../assets/Images/ServiceImg.jpg";
 import { motion } from "motion/react";
-import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import XIcon from '@mui/icons-material/X';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import EmailIcon from '@mui/icons-material/Email';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import XIcon from "@mui/icons-material/X";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import EmailIcon from "@mui/icons-material/Email";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
+const schema = yup.object().shape({
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+  email: yup.string().email().required(),
+  phone: yup.number().positive().integer().required(),
+});
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const submit = (data) => console.log(data);
+
   return (
     <div id="contact" className="w-[80vw] py-4 mx-auto">
       <h1 className="text-3xl font-bold text-center mt-4">
@@ -27,7 +47,9 @@ const Contact = () => {
           <section className=" w-full md:w-[25vw] px-11 md:px-0 mx-0 md:mx-auto">
             <h3 className="font-semibold text-lg">Get In Touch</h3>
             <div className="flex gap-6 py-4">
-              <p className=""><LocationOnIcon /></p>
+              <p className="">
+                <LocationOnIcon />
+              </p>
               <div className="">
                 <h5 className="font-semibold">Our Location</h5>
                 <p className="text-gray-600">
@@ -36,7 +58,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6 pb-4">
-              <p className=""><PhoneIphoneIcon /></p>
+              <p className="">
+                <PhoneIphoneIcon />
+              </p>
               <div className="">
                 <h5 className="font-semibold">Phone Number</h5>
                 <p className="text-gray-600">Appointments: +254 700 000 000</p>
@@ -44,7 +68,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6">
-              <p className=""><EmailIcon /></p>
+              <p className="">
+                <EmailIcon />
+              </p>
               <div className="">
                 <h5 className="font-semibold">Email</h5>
                 <p className="text-gray-600">clinic@gmail.com</p>
@@ -52,7 +78,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-6 py-4">
-              <p className=""><AccessTimeIcon /></p>
+              <p className="">
+                <AccessTimeIcon />
+              </p>
               <div className="">
                 <h5 className="font-semibold">Working Ours</h5>
                 <p className="text-gray-600">Mon-Fri: 9:00AM-5:00PM</p>
@@ -76,48 +104,34 @@ const Contact = () => {
               </legend>
               <div className="flex flex-col lg:flex-row gap-6 lg:gap-15">
                 <div className="flex flex-wrap  flex-col gap-1">
-                  <label htmlFor="name" className="block mb-">
-                    Full Name:
-                  </label>
+                  <label className="block mb-">Full Name:</label>
                   <input
                     type="text"
                     placeholder="Your name"
                     id="name"
-                    name="name"
-                    required
                     className="border  rounded-md px-4 py-1"
                   />
                 </div>
                 <div className="flex flex-wrap gap-1 flex-col ">
-                  <label htmlFor="number">Phone Number</label>
+                  <label>Phone Number</label>
                   <input
                     type="number"
-                    name="number"
                     id="number"
                     placeholder="+254 XX XXX XXX"
-                    required
                     className="border  rounded-md mb-4 px-4 py-1"
                   />
                 </div>
               </div>
-              <label htmlFor="email" className="block mb-1 mt-4">
-                Email Address
-              </label>
+              <label className="block mb-1 mt-4">Email Address</label>
               <input
                 type="email"
                 placeholder="your@gmail.com"
-                name="email"
                 id="email"
-                required
                 className="border  rounded-md w-full mb-6 px-4 py-1"
               />
-              <label htmlFor="message" className="block mb-1">
-                Your message
-              </label>
+              <label className="block mb-1">Your message</label>
               <textarea
-                name="message"
                 id="message"
-                required
                 className="border  rounded-md w-full px-4 mb-6 px-4"
               ></textarea>
               <label htmlFor="services" className="block mb-1">
@@ -192,7 +206,9 @@ const Contact = () => {
       >
         <div className="px-6 pb-6 content-end">
           <header>
-            <h1 className="font-bold text-2xl text-pink-600 italic">Ganjala Clinic</h1>
+            <h1 className="font-bold text-2xl text-pink-600 italic">
+              Ganjala Clinic
+            </h1>
           </header>
           <p className="py-4 text-lg">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -215,37 +231,55 @@ const Contact = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           </p>
 
-          <form action="" className="flex flex-col py-2">
+          <form
+            onSubmit={handleSubmit(submit)}
+            action=""
+            className="flex flex-col py-2"
+          >
             <div className="flex flex-col md:flex-row flex-wrap">
               <input
                 className="border-gray-200 md:w-1/2 py-2 shadow-md border  rounded-md px-4 mb-6"
                 type="text"
+                {...register("firstName")}
                 placeholder="First Name"
-                required
               />
               <input
                 className="border-gray-200 md:w-1/2 py-2 shadow-md border  rounded-md px-4 mb-6"
                 type="text"
+                {...register("lastName")}
                 placeholder="Last Name"
-                required
               />
             </div>
             <input
-              className="border-gray-200 py-2 shadow-md border  rounded-md px-4 mb-6"
+              className="border-gray-200 pt-2 shadow-md border  rounded-md px-4"
               type="email"
+              {...register("email", {
+                pattern: {
+                  value: /^.*@hygraph.com$/,
+                  message: "email must end with a hygraph value",
+                },
+              })}
               placeholder="Email"
-              required
             />
+            <span className="text-s text-red-700 pt-1">
+              {errors.email?.message}
+            </span>
             <input
-              className="border-gray-200 py-2 shadow-md border  rounded-md px-4 mb-6"
+              className="border-gray-200 py-2 shadow-md border  rounded-md px-4 mt-6"
               type="number"
+              {...register("phone", {
+                minLength: 1,
+                maxLength: 10,
+              })}
               placeholder="Phone"
-              required
             />
+            <span className="text-s text-red-700 pt-1">
+              {errors.phone?.message}
+            </span>
             <textarea
               name="message"
               id="message"
-              className="border border-gray-200 py-2 shadow-md border  rounded-md px-4 mb-6"
+              className="border border-gray-200 py-2 shadow-md border  rounded-md px-4 my-6"
               placeholder="Describe your issue"
             ></textarea>
             <motion.button
