@@ -8,27 +8,30 @@ import gsap from "gsap";
 
 const Hero = () => {
   useGSAP(() => {
-    gsap.to("#hero", {
-      x: 250,
-      repeat: -1,
-      yoyo: true,
-      duration: 2,
-      ease: "power1.inOut",
-    });
+    gsap.fromTo(
+      "#hero",
+      { x: 50, y: 30 },
+      { x: 0, y: 0, duration: 2, ease: "power1.inOut" }
+    );
+    gsap.fromTo(
+      ".heroHeader",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 2, ease: "power1.inOut" }
+    );
   }, []);
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-5 lg:gap-50 mt-3 lg:h-[90vh] w-[80vw] mx-auto">
       <div className="">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="text-4xl font-bold"
+        <h1
+          // initial={{ opacity: 0, y: -50 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 2, ease: "easeOut" }}
+          className="heroHeader text-4xl font-bold"
         >
           Enhance Your <br /> Natural{" "}
           <span className="text-pink-800">Beauty</span>
-        </motion.h1>
+        </h1>
         <p
           id="hero"
           className="text-gray-400 py-4 text-md sm:text-lg w-full sm:w-[35rem]"

@@ -1,42 +1,60 @@
 import React from "react";
-import AboutImg from "../assets/Hero/HeroImg.jpeg";
+// import AboutImg from "../assets/Hero/HeroImg.jpeg";
 import Hyrda from "../assets/Images/Hyrda.webp";
 import Button from "../Component/Button";
 import { Link } from "react-scroll";
-import { motion } from "motion/react";
-import { useGSAP } from "@gsap/react";
+// import { motion } from "motion/react";
+import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  // const scrollRef = useRef();
+
+  //implement gsap scroll trigger
   useGSAP(() => {
     gsap.fromTo(
       ".aboutImg",
       {
         x: -120,
+        opacity: 0,
         borderRadius: "100%",
       },
       {
         ease: "power1.inOut",
-        duration: 2, 
+        duration: 2,
+        opacity: 1,
         delay: 0.5,
         borderRadius: "3%",
         x: 0,
+        scrollTrigger: {
+          trigger: ".aboutSection",
+          start: "top center",
+          end: "bottom top",
+          markers: true,
+          toggleActions: "restart pause reverse pause",
+        },
       }
     );
 
     gsap.fromTo(
       ".aboutSection",
-      {
-        opacity: 0,
-        y: 30,
-        x: 50,
-      },
+      { opacity: 0, y: 30, x: 50 },
       {
         opacity: 1,
         y: 0,
         x: 0,
-        delay: 1,
+        delay: 2,
         stagger: 0.7,
+        scrollTrigger: {
+          trigger: ".aboutSection",
+          start: "top center",
+          end: "bottom top",
+          markers: true,
+          toggleActions: "restart pause reverse pause",
+        },
       }
     );
   }, []);
@@ -44,6 +62,7 @@ const About = () => {
   return (
     <div
       id="about"
+      // ref={scrollRef}
       className=" flex flex-col md:flex-row gap-5 md:gap-20 w-[80vw] mx-auto py-6 md:py-10"
     >
       <img
@@ -89,7 +108,7 @@ const About = () => {
           to="specialists"
           spy={true}
           smooth={true}
-          offset={-50}
+          offset={-30}
           duration={500}
         >
           <Button text="Meet our Specialists" />
