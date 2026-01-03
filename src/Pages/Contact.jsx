@@ -1,26 +1,34 @@
 import React from "react";
-import HeroImg from "../assets/Hero/HeroImg.jpeg";
-import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
-import Button from "../Component/Button";
+// import HeroImg from "../assets/Hero/HeroImg.jpeg";
+// import mensHydrafacial from "../assets/Images/mens-hydrafacial.webp";
+// import Button from "../Component/Button";
 import ServiceImg from "../assets/Images/ServiceImg.jpg";
 import { motion } from "motion/react";
 import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import EmailIcon from "@mui/icons-material/Email";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+// import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+// import EmailIcon from "@mui/icons-material/Email";
+// import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
 
 const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  email: yup.string().email().required(),
-  phone: yup.number().positive().integer().required(),
+  firstName: yup.string().required("required"),
+  lastName: yup.string().required("required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  phone: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
+    .min(10, "Phone number must be exactly 10 digits")
+    .max(10, "Phone number must be exactly 10 digits"),
+  message: yup.string().required(),
 });
 
 const Contact = () => {
@@ -32,7 +40,10 @@ const Contact = () => {
     resolver: yupResolver(schema),
   });
 
-  const submit = (data) => console.log(data);
+  const submit = (data, e) => {
+    console.log(data);
+    e.target.reset();
+  };
 
   return (
     <div id="contact" className="w-[80vw] py-4 mx-auto">
@@ -42,7 +53,7 @@ const Contact = () => {
       <p className="text-center">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </p>
-      <div className="my-4 flex flex-wrap flex-col md:flex-row  gap-[2vw] w-[80vw] mx-auto">
+      {/* <div className="my-4 flex flex-wrap flex-col md:flex-row  gap-[2vw] w-[80vw] mx-auto">
         <div className="bg-white w-full md:w-[30vw] pt-6 hover:contrast-95">
           <section className=" w-full md:w-[25vw] px-11 md:px-0 mx-0 md:mx-auto">
             <h3 className="font-semibold text-lg">Get In Touch</h3>
@@ -186,18 +197,18 @@ const Contact = () => {
               >
                 Send Message
               </button> */}
-              <div className="pt-8">
+      {/* <div className="pt-8">
                 {" "}
                 <Button text="Send Message" />
               </div>
             </fieldset>
           </form>
         </div>
-      </div>
+      </div> */}
 
       {/* alternative contact */}
       <div
-        className="flex gap-5 flex-col md:flex-row md:h-[90vh] w-[80vw] mx-auto "
+        className="flex gap-5 flex-col md:flex-row md:h-[90vh] w-[80vw] mx-auto my-8"
         style={{
           backgroundImage: `url(${ServiceImg})`,
           backgroundRepeat: "no-repeat",
@@ -215,7 +226,9 @@ const Contact = () => {
           </p>
 
           <section className="flex gap-4 flex-wrap cursor-pointer">
-            <FacebookSharpIcon className="text-blue-600 hover:text-blue-800" />
+            <Link to='https://www.facebook.com/sylvester.fraide'>
+              <FacebookSharpIcon className="text-blue-600 hover:text-blue-800" />
+            </Link>
             <YouTubeIcon className="text-red-600 hover:text-red-800" />
             <InstagramIcon className="text-pink-600 hover:text-pink-800" />
             <XIcon className="text-gray-600 hover:text-gray-800" />
@@ -242,23 +255,20 @@ const Contact = () => {
                 type="text"
                 {...register("firstName")}
                 placeholder="First Name"
+                required
               />
               <input
                 className="border-gray-200 md:w-1/2 py-2 shadow-md border  rounded-md px-4 mb-6"
                 type="text"
                 {...register("lastName")}
                 placeholder="Last Name"
+                required
               />
             </div>
             <input
               className="border-gray-200 pt-2 shadow-md border  rounded-md px-4"
               type="email"
-              {...register("email", {
-                pattern: {
-                  value: /^.*@hygraph.com$/,
-                  message: "email must end with a hygraph value",
-                },
-              })}
+              {...register("email")}
               placeholder="Email"
             />
             <span className="text-s text-red-700 pt-1">
@@ -267,21 +277,22 @@ const Contact = () => {
             <input
               className="border-gray-200 py-2 shadow-md border  rounded-md px-4 mt-6"
               type="number"
-              {...register("phone", {
-                minLength: 1,
-                maxLength: 10,
-              })}
+              {...register("phone")}
               placeholder="Phone"
             />
             <span className="text-s text-red-700 pt-1">
               {errors.phone?.message}
             </span>
             <textarea
-              name="message"
+              {...register("message")}
               id="message"
-              className="border border-gray-200 py-2 shadow-md border  rounded-md px-4 my-6"
+              className="border border-gray-200 py-2 shadow-md border  rounded-md px-4 mt-6"
               placeholder="Describe your issue"
+              required
             ></textarea>
+            <span className="text-s text-red-700 pt-1">
+              {errors.message?.message}
+            </span>
             <motion.button
               // whileHover={{ scale: 1.05 }}
               // whileTap={{ scale: 0.95 }}

@@ -3,8 +3,20 @@ import Button from "./Button";
 import HeroImg from "../assets/Hero/HeroImg.jpeg";
 import { Link } from "react-scroll";
 import { motion } from "motion/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.to("#hero", {
+      x: 250,
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
     <div className="flex flex-col lg:flex-row items-center gap-5 lg:gap-50 mt-3 lg:h-[90vh] w-[80vw] mx-auto">
       <div className="">
@@ -15,9 +27,12 @@ const Hero = () => {
           className="text-4xl font-bold"
         >
           Enhance Your <br /> Natural{" "}
-          <span className="text-pink-800">Beauty</span>{" "}
+          <span className="text-pink-800">Beauty</span>
         </motion.h1>
-        <p className="text-gray-400 py-4 text-md sm:text-lg w-full sm:w-[35rem]">
+        <p
+          id="hero"
+          className="text-gray-400 py-4 text-md sm:text-lg w-full sm:w-[35rem]"
+        >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit neque
           laudantium eius maiores, hic quia inventore provident minima atque,
           quod illo numquam? Assumenda voluptas temporibus nemo amet dolores
