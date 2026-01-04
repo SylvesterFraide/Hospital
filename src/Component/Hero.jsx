@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "./Button";
 import HeroImg from "../assets/Hero/HeroImg.jpeg";
 import { Link } from "react-scroll";
 import { motion } from "motion/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatedNumber } from "./AnimatedNumber";
 
-const Hero = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Hero = (start, end) => {
+  const imgRef = useRef(null);
+  useEffect(() => {
+    const element = imgRef.current;
+    gsap.fromTo(
+      element,
+      {
+        x: 110,
+        rotate: 90,
+      },
+      {
+        x: 0,
+        duration: 2,
+        rotate: 0,
+
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: element,
+        },
+      }
+    );
+  }, []);
+
   useGSAP(() => {
     gsap.fromTo(
       "#hero",
@@ -61,36 +87,36 @@ const Hero = () => {
         </div>
         <div className="flex items-center  ml-2 sm:ml-10 py-6 gap-6 sm:gap-10">
           <div className="">
-            <p className="text-pink-800 font-semibold text-md sm:text-lg">
-              2,500+
+            <p className="text-pink-800 font-semibold text-md sm:text-lg flex">
+              <AnimatedNumber start={2495} end={2500} /> +
             </p>
             <p className="text-gray-400 text-md sm:text-lg">Clients</p>
           </div>
           <div className="">
-            <p className="text-pink-800 font-semibold text-md sm:text-lg">
-              20+
+            <p className="text-pink-800 font-semibold text-md sm:text-lg flex">
+              <AnimatedNumber start={15} end={20} /> +
             </p>
             <p className="text-gray-400 text-md sm:text-lg">Specialists</p>
           </div>
           <div className="">
-            <p className="text-pink-800 font-semibold text-md sm:text-lg">
-              50+
+            <p className="text-pink-800 font-semibold text-md sm:text-lg flex">
+              <AnimatedNumber start={45} end={50} /> +
             </p>
             <p className="text-gray-400 text-md sm:text-lg">Treatments</p>
           </div>
           <div className="">
-            <p className="text-pink-800 font-semibold text-md sm:text-lg">
-              10+
+            <p className="text-pink-800 font-semibold text-md sm:text-lg flex">
+              <AnimatedNumber start={5} end={10} /> +
             </p>
             <p className="text-gray-400 text-md sm:text-lg">Years</p>
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="relative" ref={imgRef}>
         <img
           src={HeroImg}
           alt="Hero"
-          className="w-80 h-80 rounded-[90%] hover:scale-105 transition-transform duration-300"
+          className="w-80 h-80 rounded-[90%] heroImage hover:scale-105 transition-transform duration-300"
         />
       </div>
     </div>

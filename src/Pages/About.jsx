@@ -33,7 +33,6 @@ const About = () => {
           trigger: ".aboutSection",
           start: "top center",
           end: "bottom top",
-          markers: true,
           toggleActions: "restart pause reverse pause",
         },
       }
@@ -52,7 +51,6 @@ const About = () => {
           trigger: ".aboutSection",
           start: "top center",
           end: "bottom top",
-          markers: true,
           toggleActions: "restart pause reverse pause",
         },
       }
@@ -69,9 +67,6 @@ const About = () => {
         src={Hyrda}
         alt=""
         className="aboutImg w-[25rem] h-[28rem] rounded-xl"
-        // whileHover={{ scale: 1.1 }}
-        // whileTap={{ scale: 0.9 }}
-        // transition={{duration:0.5, ease:"easeInOut"}}
       />
 
       <div className="aboutSection">

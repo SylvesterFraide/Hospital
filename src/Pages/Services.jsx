@@ -2,35 +2,41 @@ import React from "react";
 import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
 import { Link } from "react-router-dom";
 import ServiceImg from "../assets/Images/ServiceImg.jpg";
-import { motion } from "motion/react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-const container = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.7, delayChildren: 1 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 const Services = () => {
+  useGSAP(() => {
+    gsap.from("#title", { opacity: 0, duration: 5, ease: "power1.inOut" });
+    gsap.from("#description", {
+      y: 20,
+      opacity: 0,
+      duration: 3,
+      ease: "power1.inOut",
+      delay: 2,
+    });
+    gsap.fromTo(
+      "#item",
+      { opacity: 0, y: 30, rotation: -90 },
+      { opacity: 1, y: 0, rotation: 0, duration: 3, delay: 4, stagger: 1, ease: "power1.inOut", yoyo: true }
+    );
+  });
+
   return (
     <div id="services" className=" w-[80vw] mx-auto py-6">
-      <h1 className="text-2xl font-bold py-0.5 text-center">
+      <h1 id="title" className="text-2xl font-bold py-0.5 text-center">
         Our <span className="text-pink-600">Premium Services</span>
       </h1>
-      <p className="text-center pb-10 w-[60vw] mx-auto py-2 text-lg">
+      <p
+        id="description"
+        className="text-center text-gray-600  pb-10 w-[60vw] mx-auto py-2 text-lg"
+      >
         fuga cumque natus nostrum eos ex minus enim. Totam dolor repellat hic
         facere optio sunt, tempora omnis amet.
       </p>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4"
-      >
-        <motion.div
-          variants={item}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4">
+        <div
+          id="item"
           className="bg-white rounded shadow h-[21rem] w-full cursor-pointer hover:contrast-90 transition ease-in-out shadow-md"
         >
           <h1 className="font-bold text-md pl-4 text-pink-600 py-6">icon1</h1>
@@ -46,9 +52,9 @@ const Services = () => {
               Learn more <KeyboardArrowRightSharpIcon />
             </p>
           </Link>
-        </motion.div>
-        <motion.div
-          variants={item}
+        </div>
+        <div
+          id="item"
           className="bg-white rounded shadow h-[21rem] w-full cursor-pointer hover:contrast-90 transition ease-in-out shadow-md"
         >
           <h1 className="font-bold text-lg pl-4 text-pink-600 py-6">icon2</h1>
@@ -64,9 +70,9 @@ const Services = () => {
               Learn more <KeyboardArrowRightSharpIcon />
             </p>
           </Link>
-        </motion.div>
-        <motion.div
-          variants={item}
+        </div>
+        <div
+          id="item"
           className="bg-white rounded shadow h-[21rem] w-full cursor-pointer hover:contrast-90 transition ease-in-out shadow-md"
         >
           <h1 className="font-bold text-lg pl-4 text-pink-600 py-6">icon3</h1>
@@ -82,9 +88,9 @@ const Services = () => {
               Learn more <KeyboardArrowRightSharpIcon />
             </p>
           </Link>
-        </motion.div>
-        <motion.div
-          variants={item}
+        </div>
+        <div
+          id="item"
           className="bg-white rounded shadow h-[21rem] w-full cursor-pointer hover:contrast-90 transition ease-in-out shadow-md"
         >
           <h1 className="font-bold text-lg pl-4 text-pink-600 py-6">icon4</h1>
@@ -98,8 +104,8 @@ const Services = () => {
               Learn more <KeyboardArrowRightSharpIcon />
             </p>
           </Link>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       <div
         className="text-center py-10 my-10 contrast-60 rounded-md"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { product } from "../Component/array";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -6,6 +6,15 @@ import gsap from "gsap";
 const Appointment = () => {
   // const [newProduct, setNewProduct] = useState([]);
   const [bestSeller, setBestSeller] = useState([]);
+  const numberRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(numberRef.current, {
+      textContent: 100,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  }, []);
 
   // const productCopy = product.slice(0, 8);
   // const sortProduct = productCopy.sort((a, b) => a.price - b.price);
@@ -16,7 +25,7 @@ const Appointment = () => {
   }, []);
 
   useGSAP(() => {
-    gsap.to('.stager-box', {
+    gsap.to(".stager-ox", {
       y: 150,
       repeat: 1,
       yoyo: true,
@@ -55,6 +64,10 @@ const Appointment = () => {
         <div className="h-30 w-20 bg-red-300 rounded-xl mt-8 mx-4 stager-box"></div>
         <div className="h-30 w-20 bg-red-300 rounded-xl mt-8 mx-4 stager-box"></div>
       </div>
+
+      <p ref={numberRef} className="text-[10rem] text-center">
+        70
+      </p>
     </div>
   );
 };
